@@ -15,4 +15,4 @@ plotly
 notebook
 jupyter
 ipywidgets
-gradio
+streamlit
