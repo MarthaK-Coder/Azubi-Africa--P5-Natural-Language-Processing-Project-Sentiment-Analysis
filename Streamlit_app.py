@@ -44,14 +44,25 @@ def sentiment_analysis(text):
     return scores
 
 # Streamlit app
+st.set_page_config(page_title="Sentiment Analysis App", page_icon=":chart_with_upwards_trend:")
+
+# Create a navigation bar with a "Home" icon and an "About" section
+st.sidebar.write(":chart_with_upwards_trend: Home")
+st.sidebar.title("Navigation")
+if st.sidebar.button("About"):
+    st.sidebar.write("Sentiment Analysis for Covid Responses")
+    st.sidebar.write("This app analyzes sentiment in text related to COVID.")
+
 st.title("Sentiment Analysis App")
 
-user_input = st.text_area("Enter a text for sentiment analysis:")
+user_input = st.text_area("Copy and Paste and/or Enter a Covid tweet:")
+
 if st.button("Analyze Sentiment"):
-    if user_input:
+    if "covid" in user_input.lower():
         scores = sentiment_analysis(user_input)
-        st.write("Sentiment Scores:")
+        st.write("Output:")
         for label, score in scores.items():
             st.write(f"{label}: {score:.3f}")
     else:
-        st.warning("Please enter a text for analysis.")
+        st.warning("Please enter a valid text related to COVID.") 
+
