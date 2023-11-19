@@ -4,12 +4,11 @@ This project demonstrates the process of fine-tuning a sentiment analysis model 
 ## Setup
 ### 1. Virtual Environment
 Create and activate a virtual environment for the project:
-```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 ### 2. Install Dependecies
- Install the required Python packages using the provided requirements.txt file:
+Install the required Python packages using the provided requirements.txt file:
  pip install -r requirements.txt
 
 ## Fine-tuning with Hugging Face
